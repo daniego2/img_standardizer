@@ -1,0 +1,7 @@
+{
+    "input_path": "input",
+    "output_path": "output",
+    "width": 800,
+    "height": 800,
+    "format": "png"
+}
