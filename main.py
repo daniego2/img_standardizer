@@ -77,7 +77,7 @@ def main():
     logger.info(f"Config: {data['width']}x{data['height']}.{data['format']}")
     logger.info(f"Input: {data['input_path']} → Output: {data['output_path']}")
 
-    for idx, input_file in enumerate(input_list, 1):
+    for i, input_file in enumerate(input_list, 1):
         try:
             img = convert_color_model(
                 os.path.join(data["input_path"], input_file), data
@@ -86,9 +86,8 @@ def main():
             filename = f"{parse_filename(input_file)}.{data['format']}"
             img.save(os.path.join(data["output_path"], filename), format=data["format"])
             logger.info(
-                f"[{idx}/{len(input_list)}] {colorize(filename, 'blue')} \u2714"
+                f"[{i}/{len(input_list)}] {colorize(filename, 'blue')} \u2714"
             )
-            i += 1
         except Exception as e:
             logger.error(f"Error processing {colorize(input_file, 'red')}: {e}")
 
